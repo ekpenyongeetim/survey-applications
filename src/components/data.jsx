@@ -15,6 +15,12 @@ export const headerOptions = [
     surveyor: "(E. O. Edema, mnis)",
     img: "../assests/real-time.png", // Specify the image path for Theme 2
   },
+  {
+    value: "theme3",
+    label: "Statwit Survey Services",
+    surveyor: "(J. E. Ukama, mnis)",
+    img: "../assests/ukama-header.png", // Specify the image path for Theme 2
+  },
   // Add more themes as needed
 ];
 
