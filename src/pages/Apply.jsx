@@ -8,6 +8,7 @@ import Form1Footer from "../components/Form1Footer";
 import Form2Summary from "../components/Form2Summary";
 import right from "../assets/chevron-right.svg";
 import "../styles/Apply.css";
+import MyHeader from "../components/MyHeader";
 
 const Apply = () => {
   const [formData, setFormData] = useState({
@@ -92,32 +93,35 @@ const Apply = () => {
     switch (currentStep) {
       case 1:
         return (
-          <div className="case1-container">
-            <div className="dropdown-label">
-              <label htmlFor="dropdown">Select a Survey Company:</label>
-            </div>
-            <select
-              id="dropdown"
-              value={selectedValue}
-              onChange={handleSelectChange}
-            >
-              <option value="" className="select-btn">
-                ---- Select ----
-              </option>
-              {headerOptions.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
+          <>
+            <MyHeader />
+            <div className="case1-container">
+              <div className="dropdown-label">
+                <label htmlFor="dropdown">Select a Survey Company:</label>
+              </div>
+              <select
+                id="dropdown"
+                value={selectedValue}
+                onChange={handleSelectChange}
+              >
+                <option value="" className="select-btn">
+                  ---- Select ----
                 </option>
-              ))}
-            </select>
+                {headerOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
 
-            <JobList
-              formData={formData}
-              handleChange={handleChange}
-              addNewUser={addNewUser}
-              removeUserGroup={removeUserGroup}
-            />
-          </div>
+              <JobList
+                formData={formData}
+                handleChange={handleChange}
+                addNewUser={addNewUser}
+                removeUserGroup={removeUserGroup}
+              />
+            </div>
+          </>
         );
       case 2:
         return (
