@@ -35,7 +35,7 @@ const Form1Body = ({ formattedDate, pillarSum }) => {
         </p>
       </section>
       <section>
-        <p className="letter-topic">REGULAR PILLARS REQUEST FOR SURCON</p>
+        <p className="letter-topic">REQUEST FOR REGULAR SURCON PILLARS</p>
         <p className="letter-body">
           In compliance with the SURCON rules and Regulation, kindly issue to
           me, through the NIS-CRS chairman,
