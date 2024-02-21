@@ -1,4 +1,4 @@
-// JobForm.js
+// JobForm
 import React, { useState } from "react";
 
 const JobForm = ({
