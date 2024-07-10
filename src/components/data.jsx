@@ -6,20 +6,26 @@ export const headerOptions = [
   {
     value: "theme1",
     label: "Shapestagon Ventures",
-    surveyor: "(Ekpenyong E. Etim, mnis)",
-    img: "./public/shapestagon-letter-head.png", // Specify the image path for Theme 1
+    surveyor: "(Surv. Ekpenyong E. Etim, mnis)",
+    img: "../assests/shapestagon-letter-head.png", // Specify the image path for Theme 1
   },
   {
     value: "theme2",
     label: "Real Time Survey",
-    surveyor: "(E. O. Edema, mnis)",
-    img: "./public/real-time.png", // Specify the image path for Theme 2
+    surveyor: "(Surv. E. O. Edema, mnis)",
+    img: "../assests/real-time.png", // Specify the image path for Theme 2
   },
   {
     value: "theme3",
     label: "Statwit Survey Services",
-    surveyor: "(J. E. Ukama, mnis)",
-    img: "./public/ukama-header.png", // Specify the image path for Theme 2
+    surveyor: "(Surv. J. E. Ukama, mnis)",
+    img: "../assests/ukama-header.png", // Specify the image path for Theme 2
+  },
+  {
+    value: "theme4",
+    label: "Uchua Geosurveys (UGS)",
+    surveyor: "(Surv. Emmanuel U. Ekerikang, mnis)",
+    img: "../assests/ekerikan-header.png", // Specify the image path for Theme 2
   },
   // Add more themes as needed
 ];
