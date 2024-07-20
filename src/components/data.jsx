@@ -13,7 +13,7 @@ export const headerOptions = [
     value: "theme2",
     label: "Real Time Survey",
     surveyor: "(Surv. E. O. Edema, mnis)",
-    img: "../assests/real-time.png", // Specify the image path for Theme 2
+    img: "../public/real-time.png", // Specify the image path for Theme 2
   },
   {
     value: "theme3",
