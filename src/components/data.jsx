@@ -19,7 +19,7 @@ export const headerOptions = [
     value: "theme3",
     label: "Statwit Survey Services",
     surveyor: "(Surv. J. E. Ukama, mnis)",
-    img: "../assests/ukama-header.png", // Specify the image path for Theme 2
+    img: "../public/ukama-header.png", // Specify the image path for Theme 2
   },
   {
     value: "theme4",
