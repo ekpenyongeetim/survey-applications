@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import JobList from "../components/JobList";
 import Step3Form from "../components/Step3Form";
 import Summary from "../components/Summary";
@@ -30,6 +30,13 @@ const Apply = () => {
   const [selectedValue, setSelectedValue] = useState("");
   const [surveyor, setSurveyor] = useState("");
 
+  useEffect(() => {
+    const savedFormData = localStorage.getItem("applyFormData");
+    if (savedFormData) {
+      setFormData(JSON.parse(savedFormData));
+    }
+  }, []);
+
   const handleChange = (e, step, index) => {
     const { name, value } = e.target;
     setFormData((prevData) => {
@@ -43,6 +50,7 @@ const Apply = () => {
       } else {
         newData[step] = { ...newData[step], [name]: value };
       }
+      localStorage.setItem("applyFormData", JSON.stringify(newData));
       return newData;
     });
   };
