@@ -25,7 +25,7 @@ export const headerOptions = [
     value: "theme4",
     label: "Uchua Geosurveys (UGS)",
     surveyor: "(Surv. Emmanuel U. Ekerikang, mnis)",
-    img: "../assests/ekerikan-header.png", // Specify the image path for Theme 2
+    img: "/ekerikan-header.png", // Specify the image path for Theme 2
   },
   // Add more themes as needed
 ];
