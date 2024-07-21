@@ -7,19 +7,19 @@ export const headerOptions = [
     value: "theme1",
     label: "Shapestagon Ventures",
     surveyor: "(Surv. Ekpenyong E. Etim, mnis)",
-    img: "../assests/shapestagon-letter-head.png", // Specify the image path for Theme 1
+    img: "/shapestagon-letter-head.png", // Specify the image path for Theme 1
   },
   {
     value: "theme2",
     label: "Real Time Survey",
     surveyor: "(Surv. E. O. Edema, mnis)",
-    img: "../public/real-time.png", // Specify the image path for Theme 2
+    img: "/public/real-time.png", // Specify the image path for Theme 2
   },
   {
     value: "theme3",
     label: "Statwit Survey Services",
     surveyor: "(Surv. J. E. Ukama, mnis)",
-    img: "../public/ukama-header.png", // Specify the image path for Theme 2
+    img: "/public/ukama-header.png", // Specify the image path for Theme 2
   },
   {
     value: "theme4",
