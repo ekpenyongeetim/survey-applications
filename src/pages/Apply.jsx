@@ -205,7 +205,7 @@ const Apply = () => {
 
   return (
     <div className="apply-container">
-      <form>
+      <form onSubmit={(e) => handleSubmit(e, "home")}>
         {renderStep()}
         <br />
         {currentStep > 1 && (
