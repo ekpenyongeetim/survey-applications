@@ -22,6 +22,16 @@ body {
   font-size: 0.875rem;
 }
 
+.print-button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 0.75em;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #00ff00;
+}
+
 /* ---------- MyHeader.jsx ---------------*/
 nav.navbar {
   display: flex;
@@ -459,4 +469,33 @@ td {
   padding: 15px 5px;
   text-align: left;
   line-height: 1.7;
+}
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/* ---------------case4--------------- */
+.return-button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 0.75em;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #00ff00;
+}
+
+.case4 {
+  width: 100%;
+  padding: 15px 5px;
+  h1 {
+    background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 48px; /* Adjust the font size as needed */
+  }
+  h3 {
+    background: linear-gradient(45deg, #f5a623, #f6d365, #fd85cb);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 36px; /* Adjust the font size as needed */
+  }
 }

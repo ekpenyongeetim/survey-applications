@@ -9,6 +9,8 @@ import Form2Summary from "../components/Form2Summary";
 import right from "../assets/chevron-right.svg";
 import "../styles/Apply.css";
 import MyHeader from "../components/MyHeader";
+import { useNavigate } from "react-router-dom";
+import Confetti from "react-confetti";
 
 const Apply = () => {
   const [formData, setFormData] = useState({
@@ -29,6 +31,8 @@ const Apply = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedValue, setSelectedValue] = useState("");
   const [surveyor, setSurveyor] = useState("");
+  const [showConfetti, setShowConfetti] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const savedFormData = localStorage.getItem("applyFormData");
@@ -36,6 +40,14 @@ const Apply = () => {
       setFormData(JSON.parse(savedFormData));
     }
   }, []);
+
+  useEffect(() => {
+    if (currentStep === 4) {
+      setShowConfetti(true);
+      const timer = setTimeout(() => setShowConfetti(false), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [currentStep]);
 
   const handleChange = (e, step, index) => {
     const { name, value } = e.target;
@@ -84,6 +96,16 @@ const Apply = () => {
 
   const prevStep = () => {
     setCurrentStep((prevStep) => prevStep - 1);
+  };
+
+  const handleSubmit = (e, navigateTo) => {
+    e.preventDefault();
+    localStorage.removeItem("formData");
+    if (navigateTo === "home") {
+      navigate("/");
+    } else if (navigateTo === "start") {
+      setCurrentStep(1);
+    }
   };
 
   const handleSelectChange = (event) => {
@@ -171,7 +193,10 @@ const Apply = () => {
         );
       case 4:
         return (
-          <Step3Form formData={formData.step3} handleChange={handleChange} />
+          <div className="case4">
+            {showConfetti && <Confetti />}
+            <Step3Form formData={formData.step3} handleChange={handleChange} />
+          </div>
         );
       default:
         return null;
@@ -194,7 +219,11 @@ const Apply = () => {
             <img src={right} className="right" alt="next symbol" />
           </button>
         )}
-        {currentStep === 4 && <button type="submit">Submit</button>}
+        {currentStep === 4 && (
+          <button type="submit" className="return-button">
+            Return to Home
+          </button>
+        )}
       </form>
     </div>
   );
