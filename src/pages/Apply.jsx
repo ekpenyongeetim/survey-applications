@@ -39,6 +39,16 @@ const Apply = () => {
     if (savedFormData) {
       setFormData(JSON.parse(savedFormData));
     }
+    // Add event listener for popstate
+    const handlePopState = (event) => {
+      prevStep();
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
   }, []);
 
   useEffect(() => {
@@ -95,7 +105,7 @@ const Apply = () => {
   };
 
   const prevStep = () => {
-    setCurrentStep((prevStep) => prevStep - 1);
+    setCurrentStep((prevStep) => Math.max(prevStep - 1, 1));
   };
 
   const handleSubmit = (e, navigateTo) => {
@@ -175,7 +185,7 @@ const Apply = () => {
         );
       case 3:
         return (
-          <>
+          <div className="case3-container">
             {selectedValue && (
               <Header
                 surveyor={
@@ -189,7 +199,7 @@ const Apply = () => {
               />
             )}
             <Form2Summary formData={formData} surveyor={surveyor} />
-          </>
+          </div>
         );
       case 4:
         return (
