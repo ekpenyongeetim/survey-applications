@@ -15,7 +15,7 @@ const JobList = ({ formData, handleChange, addNewUser, removeUserGroup }) => {
         />
       ))}
 
-      {formData.step1.length < 20 && (
+      {formData.step1.length < 13 && (
         <button className="submit" type="button" onClick={addNewUser}>
           Add Job
         </button>

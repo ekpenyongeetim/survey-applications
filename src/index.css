@@ -10,18 +10,30 @@ td {
   .print-button {
     display: none;
   }
-}
-@media print {
   /* Your print-specific styles here */
   body {
     font-size: 9pt;
     /* Add other styles as needed */
+  }
+  .job-item,
+  .job-item2 {
+    page-break-inside: avoid;
   }
 
   /* Hide elements that should not be printed */
   .no-print {
     display: none;
   }
+}
+
+/* Page break after every 6 jobs */
+.job-item:nth-of-type(6n) {
+  page-break-after: always;
+}
+
+/* Page break after every 6 jobs */
+.job-item2:nth-of-type(11n) {
+  page-break-after: always;
 }
 /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 

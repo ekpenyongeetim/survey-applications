@@ -61,7 +61,7 @@ const Summary = ({ formData }) => {
         </thead>
         <tbody>
           {formData.step1.map((user, index) => (
-            <tr key={index}>
+            <tr key={index} className="job-item">
               <td>{index + 1}</td>
               <td>{user.planNumber}</td>
               <td>

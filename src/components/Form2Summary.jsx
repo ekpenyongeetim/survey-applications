@@ -165,7 +165,7 @@ const Form2Summary = ({ formData, surveyor }) => {
         </thead>
         <tbody>
           {formData.step1.map((user, index) => (
-            <tr key={index}>
+            <tr key={index} className="job-item2">
               <td>{index + 1}</td>
               <td>{user.planNumber}</td>
               <td>
