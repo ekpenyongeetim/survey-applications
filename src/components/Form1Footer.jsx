@@ -43,7 +43,7 @@ const Form1Footer = ({ surveyor }) => {
             <strong>Issued by</strong>..........................
           </div>
           <div className="sig">
-            <strong>(Name and Signature of Desk Officer)</strong>
+            <strong>(Name & Sig. of Desk Officer)</strong>
           </div>
         </section>
       </div>

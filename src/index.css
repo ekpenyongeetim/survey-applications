@@ -27,7 +27,7 @@ td {
 }
 
 /* Page break after every 6 jobs */
-.job-item:nth-of-type(6n) {
+.job-item:nth-of-type(7n) {
   page-break-after: always;
 }
 
