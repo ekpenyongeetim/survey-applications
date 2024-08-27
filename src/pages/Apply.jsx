@@ -119,9 +119,8 @@ const Apply = () => {
       if (!job.location) {
         formErrors[`location_${index}`] = "Location is required.";
       }
-      if (job.pillar < 0) {
-        formErrors[`pillar_${index}`] =
-          "Pillars must be zero or a positive number.";
+      if (!job.pillar || job.pillar <= 0) {
+        formErrors[`pillar_${index}`] = "Pillars must be a positive number.";
       }
       if (!job.deposit || job.deposit <= 0) {
         formErrors[`deposit_${index}`] = "Deposit must be a positive number.";
