@@ -2,7 +2,13 @@
 import React from "react";
 import JobForm from "./JobForm";
 
-const JobList = ({ formData, handleChange, addNewUser, removeUserGroup }) => {
+const JobList = ({
+  formData,
+  handleChange,
+  addNewUser,
+  removeUserGroup,
+  errors,
+}) => {
   return (
     <div>
       {formData.step1.map((user, index) => (
@@ -12,6 +18,7 @@ const JobList = ({ formData, handleChange, addNewUser, removeUserGroup }) => {
           index={index}
           handleChange={handleChange}
           removeUserGroup={removeUserGroup}
+          errors={errors}
         />
       ))}
 

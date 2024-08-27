@@ -32,6 +32,7 @@ const Apply = () => {
   const [selectedValue, setSelectedValue] = useState("");
   const [surveyor, setSurveyor] = useState("");
   const [showConfetti, setShowConfetti] = useState(false);
+  const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -100,8 +101,47 @@ const Apply = () => {
     });
   };
 
+  const validateForm = () => {
+    let formErrors = {};
+
+    if (!selectedValue) {
+      formErrors.selectedValue = "Please select a survey company.";
+    }
+
+    // Validate step1 fields
+    formData.step1.forEach((job, index) => {
+      if (!job.title) {
+        formErrors[`title_${index}`] = "Job Title is required.";
+      }
+      if (!job.planNumber) {
+        formErrors[`planNumber_${index}`] = "Plan Number is required.";
+      }
+      if (!job.location) {
+        formErrors[`location_${index}`] = "Location is required.";
+      }
+      if (job.pillar < 0) {
+        formErrors[`pillar_${index}`] =
+          "Pillars must be zero or a positive number.";
+      }
+      if (!job.deposit || job.deposit <= 0) {
+        formErrors[`deposit_${index}`] = "Deposit must be a positive number.";
+      } else if (!/^(\d+000)$/.test(job.deposit)) {
+        formErrors[`deposit_${index}`] =
+          "Deposit must be in thousands or end with three zeros.";
+      }
+      if (!job.area) {
+        formErrors[`area_${index}`] = "Area is required.";
+      }
+    });
+
+    setErrors(formErrors);
+    return Object.keys(formErrors).length === 0;
+  };
+
   const nextStep = () => {
-    setCurrentStep((prevStep) => prevStep + 1);
+    if (validateForm()) {
+      setCurrentStep((prevStep) => prevStep + 1);
+    }
   };
 
   const prevStep = () => {
@@ -127,6 +167,11 @@ const Apply = () => {
       headerOptions.find((option) => option.value === value)?.surveyor ||
         "white"
     );
+
+    // Clear error if a valid value is selected
+    if (value) {
+      setErrors((prevErrors) => ({ ...prevErrors, selectedValue: "" }));
+    }
   };
 
   const renderStep = () => {
@@ -159,6 +204,7 @@ const Apply = () => {
                 handleChange={handleChange}
                 addNewUser={addNewUser}
                 removeUserGroup={removeUserGroup}
+                errors={errors} // Pass errors down to JobList
               />
             </div>
           </>
@@ -223,6 +269,13 @@ const Apply = () => {
             Previous
           </button>
         )}
+
+        {errors.selectedValue && (
+          <div style={{ color: "red", fontWeight: "bold", fontSize: "16px" }}>
+            {errors.selectedValue}
+          </div>
+        )}
+
         {currentStep < 4 && (
           <button className="next-button" type="button" onClick={nextStep}>
             Next

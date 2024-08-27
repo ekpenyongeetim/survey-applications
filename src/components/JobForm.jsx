@@ -1,13 +1,7 @@
 // JobForm
-import React, { useState } from "react";
+import React from "react";
 
-const JobForm = ({
-  user,
-  index,
-  handleChange,
-  removeUserGroup,
-  handleBannerChange,
-}) => {
+const JobForm = ({ user, index, handleChange, removeUserGroup, errors }) => {
   return (
     <div className=".form" key={index}>
       <div className="title">{`Job ${index + 1}`}</div>
@@ -22,6 +16,9 @@ const JobForm = ({
         />
         <div className="cut cut-long"></div>
         <label className="placeholder">Job Title / Name</label>
+        {errors[`title_${index}`] && (
+          <div className="error-message">{errors[`title_${index}`]}</div>
+        )}
       </div>
 
       <div className="input-container ic2">
@@ -35,6 +32,9 @@ const JobForm = ({
         />
         <div className="cut"></div>
         <label className="placeholder">Plan Number</label>
+        {errors[`planNumber_${index}`] && (
+          <div className="error-message">{errors[`planNumber_${index}`]}</div>
+        )}
       </div>
 
       <div className="half-input">
@@ -47,8 +47,11 @@ const JobForm = ({
             value={user.area}
             onChange={(e) => handleChange(e, "step1", index)}
           />
-          <div class="cut cut-short"></div>
+          <div className="cut cut-short"></div>
           <label className="placeholder">Area</label>
+          {errors[`area_${index}`] && (
+            <div className="error-message">{errors[`area_${index}`]}</div>
+          )}
         </div>
 
         <div className="input-container ic2 half2">
@@ -62,6 +65,9 @@ const JobForm = ({
           />
           <div className="cut"></div>
           <label className="placeholder">Pillars</label>
+          {errors[`pillar_${index}`] && (
+            <div className="error-message">{errors[`pillar_${index}`]}</div>
+          )}
         </div>
       </div>
 
@@ -76,6 +82,9 @@ const JobForm = ({
         />
         <div className="cut cut-short"></div>
         <label className="placeholder">L G A</label>
+        {errors[`location_${index}`] && (
+          <div className="error-message">{errors[`location_${index}`]}</div>
+        )}
       </div>
 
       <div className="input-container ic2">
@@ -89,6 +98,9 @@ const JobForm = ({
         />
         <div className="cut cut-long"></div>
         <label className="placeholder">Mandatory Deposit</label>
+        {errors[`deposit_${index}`] && (
+          <div className="error-message">{errors[`deposit_${index}`]}</div>
+        )}
       </div>
 
       {/* Conditionally render the remove button to display only when the fields is more than one*/}
