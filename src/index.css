@@ -27,14 +27,25 @@ td {
 }
 
 /* Page break after every 6 jobs */
+.job-item {
+  page-break-after: auto;
+}
+
+/* Page break after every 6 jobs */
+.job-item2 {
+  page-break-after: auto;
+}
+
+/* Page break after every 6 jobs 
 .job-item:nth-of-type(7n) {
   page-break-after: always;
 }
 
-/* Page break after every 6 jobs */
+/* Page break after every 6 jobs 
 .job-item2:nth-of-type(11n) {
   page-break-after: always;
 }
+*/
 /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
 button {
