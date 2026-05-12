@@ -53,7 +53,7 @@ export const routes = [
 export const socialLinks = [
   {
     id: 1,
-    href: "https://facebook.com",
+    href: "https://web.facebook.com/ekpenyong.etim1",
     svgLink: facebook,
   },
   { id: 2, href: "https://twitter.com", svgLink: twitter },
