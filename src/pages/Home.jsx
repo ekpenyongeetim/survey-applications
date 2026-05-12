@@ -21,7 +21,7 @@ function Home() {
           <h1>Welcome to Survey Applications</h1>
           <p>
             This Survey Application App helps you generate survey application
-            templates for application of SURCON numbers. In Cross River State
+            templates for application of SURCON numbers in Cross River State.
             Created by Ekpenyong E. E. Explore your options.
           </p>
           <div className="hero-button-container">
